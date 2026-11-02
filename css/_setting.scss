@@ -1,0 +1,33 @@
+
+@use "sass:math";
+
+
+
+@function rem($px) {
+  @return math.div($px, 16) * 1rem;
+}
+
+//画面幅
+$breakpoint-sp: 768px;
+$breakpoint-tab: 1024px;
+
+
+//font
+$main-font: 'Zen Old Mincho', serif;
+$accent-font: 'La Belle Aurore', cursive;
+
+//color
+$main-color: #402828;
+$base-color: #F7F2F2;
+$accent-color:#E7E1DB;
+$back-color: #79716D; //footer
+$color-text-sub: #fbf9f5;
+
+$color-bg: #fbf9f5;
+$color-bg-alt: #f3eee7;
+$color-bg-dark: #f0e8de;
+$color-text: #3a352e;
+$color-line: #ddd3c4;
+$color-accent: #b99a76;
+$color-btn-text: #fbf9f5;
+$color-btn: #8A817C;

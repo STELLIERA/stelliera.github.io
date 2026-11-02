@@ -1,0 +1,493 @@
+
+@use "setting" as *;
+
+.price-detail {
+
+  // ============ FV ============
+  &__fv {
+    position: relative;
+    width: 100%;
+    min-height: rem(380);
+    overflow: hidden;
+
+  }
+
+  &__fv-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__fv-inner {
+    position: relative;
+    z-index: 1;
+    max-width: rem(1040);
+    margin: 0 auto;
+    padding: rem(90) rem(40) rem(60);
+
+    @media (max-width: $breakpoint-sp) {
+      padding: rem(60) rem(15) rem(40);
+      background-color: rgba(255, 255, 255, 0.4);
+      align-items: center;
+      height: rem(380);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__fv-heading {
+    font-family: $main-font;
+    font-size: rem(40);
+    letter-spacing: .08em;
+    text-align: left;
+
+    @media (max-width: $breakpoint-sp) {
+      font-size: rem(28);
+    }
+  }
+
+  &__fv-heading-sub {
+    font-family: $main-font;
+    font-size: rem(15);
+    color: $main-color;
+    margin: rem(6) 0 0;
+    padding-bottom: rem(22);
+    border-bottom: 1px solid $main-color;
+    display: inline-block;
+
+     @media (max-width: $breakpoint-sp) {
+      padding-bottom: rem(15);
+    }
+  }
+
+  &__fv-lead {
+    font-family: $main-font;
+    font-size: rem(13);
+    color: rgba($main-color, .75);
+    line-height: 2;
+    margin: rem(34) 0 0;
+         @media (max-width: $breakpoint-sp) {
+      text-align: left;
+    }
+  }
+
+  // ============ BASE PRICE / OPTION ============
+  &__panels{
+    background-color: $accent-color;
+  &-inner {
+    max-width: rem(1240);
+    margin: 0 auto;
+    display: flex;
+    gap: rem(40);
+    align-items: flex-start;
+
+    @media (max-width: $breakpoint-sp) {
+      flex-direction: column;
+    }
+  }
+  &-text{
+    margin-top: rem(34);
+    font-size: rem(15);
+  }
+  }
+
+  &__panel {
+    position: relative;
+    flex: 1;
+    background: #fff;
+    padding: rem(60) rem(50) rem(68);
+    border: none;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: rem(20);
+      border: 1px solid rgba($main-color, .15);
+      pointer-events: none;
+    }
+
+    @media (max-width: $breakpoint-sp) {
+      padding: rem(52) rem(25) rem(58);
+
+
+      &::before {
+        inset: rem(16);
+      }
+    }
+}
+
+  &__panel-title {
+    font-family: $main-font;
+    text-align: center;
+    font-size: rem(18);
+    letter-spacing: .1em;
+    color: $main-color;
+    margin: 0 0 rem(20);
+    padding-bottom: rem(20);
+    border-bottom: 1px solid rgba($main-color, .18);
+  }
+
+  &__group {
+    margin-top: rem(34);
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  &__group-title {
+    font-family: $main-font;
+    font-size: rem(16);
+    color: $main-color;
+    margin: 0 0 rem(12);
+  }
+
+  &__group-note {
+    font-size: rem(13);
+    color: rgba($main-color, .55);
+    line-height: 1.8;
+    margin: 0 0 rem(10);
+  }
+
+  // BASE PRICE / OPTION の価格リスト（dl）
+  &__list {
+    margin: 0;
+  }
+
+  &__list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: rem(10) 0 rem(10) rem(14);
+    font-size: rem(15);
+    color: $main-color;
+
+      @media screen and (max-width: $breakpoint-sp){
+      font-size: rem(13);
+      font-weight: 400;
+      padding: rem(10) 0 rem(10) rem(8);
+      flex-direction: column;
+      gap: rem(5);
+    }
+  }
+
+  &__list-item-label {
+    flex: 1;
+  }
+
+  &__list-item-label-note {
+    display: block;
+    font-size: rem(11);
+    color: rgba($main-color, .55);
+    margin-top: rem(4);
+    line-height: 1.7;
+  }
+
+  &__list-item-price {
+    white-space: nowrap;
+    font-family: $main-font;
+    font-size: rem(16);
+    color: $main-color;
+
+    @media screen and (max-width: $breakpoint-sp){
+      font-size: rem(13);
+    }
+  }
+  strong {
+      font-weight: 500;
+    }
+
+  // ============ 料金イメージ ============
+  &__plan-inner {
+    width: 100%; // 幅を明示
+    max-width: rem(1040);
+    margin: 0 auto;
+    padding: 0 rem(40);
+    text-align: center;
+
+    @media (max-width: $breakpoint-sp) {
+      padding: 0;
+    }
+  }
+
+  &__plan-title {
+    font-family: $main-font;
+    font-size: rem(24);
+    letter-spacing: .1em;
+    color: $main-color;
+    margin: 0 0 rem(24);
+  }
+
+  &__plan-note {
+    color: rgba($main-color, .65);
+    line-height: 1.9;
+    margin: 0 0 rem(50);
+  }
+
+  &__plan-list {
+    display: flex;
+    gap: rem(22);
+    text-align: left;
+
+
+    @media (max-width: 1024px) {
+      gap: rem(16);
+    }
+
+    @media (max-width: $breakpoint-sp) {
+      flex-direction: column;
+    }
+  }
+
+  &__plan-item {
+    flex: 1;
+    min-width: 0;
+    background: $base-color;
+    border: 1px solid rgba($main-color, .18);
+    border-radius: rem(4);
+    padding: rem(30) rem(20) rem(32);
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+
+  &__plan-item-title {
+    font-family: $main-font;
+    text-align: center;
+    font-size: rem(15.5);
+    color: $main-color;
+    margin: 0 0 rem(4);
+  }
+
+  &__plan-item-desc {
+    text-align: center;
+    font-size: rem(10.5);
+    color: rgba($main-color, .55);
+    margin: 0 0 rem(18);
+  }
+
+  &__plan-item-tag {
+    display: inline-block;
+    align-self: flex-start;
+    background: rgba($main-color, .1);
+    color: $main-color;
+    font-size: rem(10.5);
+    letter-spacing: .05em;
+    padding: rem(4) rem(12);
+    margin-bottom: rem(14);
+    border-radius: rem(2);
+  }
+
+  &__plan-item-detail {
+    margin: 0 0 rem(20);
+    flex: 1;
+  }
+
+  &__plan-item-detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: rem(10);
+    padding: rem(10) 0;
+    font-size: rem(12.5);
+    color: $main-color;
+  }
+
+  &__plan-item-detail-row-label {
+    flex: 1;
+    min-width: 0;
+    word-break: break-all;
+  }
+
+  &__plan-item-detail-row-label-note {
+    display: block;
+    font-size: rem(10);
+    color: rgba($main-color, .55);
+    margin-top: rem(3);
+  }
+
+  &__plan-item-detail-row-price {
+    white-space: nowrap;
+    font-family: $main-font;
+    font-size: rem(13);
+    flex-shrink: 0;
+  }
+
+  &__plan-item-total {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    border-top: 1px solid rgba($main-color, .18);
+    padding-top: rem(16);
+  }
+
+  &__plan-item-total-label {
+    font-size: rem(11);
+    letter-spacing: .1em;
+    color: rgba($main-color, .65);
+  }
+
+  &__plan-item-total-price {
+    font-family: $main-font;
+    font-size: rem(22);
+    color: $main-color;
+  }
+
+
+  // ============ サイト制作の注意事項 ============
+  &__notice {
+    background-color: $accent-color;
+  }
+  &__notice-inner {
+    max-width: rem(1000);
+    margin: 0 auto;
+    padding: rem(80);
+    background-color: #fff;
+
+    @media (max-width: $breakpoint-sp) {
+      padding: rem(40) rem(10);
+    }
+  }
+
+  &__notice-title {
+    font-family: $main-font;
+    text-align: center;
+    font-size: rem(21);
+    letter-spacing: .1em;
+    color: $main-color;
+    position: relative;
+    margin: 0 0 rem(50);
+
+    @media (max-width: $breakpoint-sp) {
+      font-size: rem(18);
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 30%;
+      height: 1px;
+      background: rgba($main-color, .18);
+
+      @media (max-width: $breakpoint-sp) {
+        display: none;
+      }
+
+    }
+
+    &::before { left: 0; }
+    &::after  { right: 0; }
+  }
+
+  &__notice-list {
+    margin: 0;
+  }
+
+  &__notice-list-item {
+    position: relative;
+    padding: rem(14) 0 rem(14) rem(20);
+    font-size: rem(16);
+    line-height: 2;
+    color: $main-color;
+
+    &::before {
+      content: "・";
+      position: absolute;
+      left: 0;
+    }
+    @media (max-width: $breakpoint-sp) {
+      font-size: rem(13);
+    }
+  }
+
+
+
+
+
+
+}
+
+//
+// service
+//
+.service-menu {
+  background: $base-color;
+  padding: rem(90) 0;
+
+  &__inner {
+    width: 100%;
+    max-width: rem(1040);
+    margin: 0 auto;
+    padding: 0 rem(40);
+    text-align: center;
+
+    @media (max-width: $breakpoint-sp) {
+      padding: 0 rem(20);
+    }
+  }
+
+  &__title {
+    font-family: $main-font;
+    font-size: rem(19);
+    letter-spacing: .1em;
+    color: $main-color;
+    margin: 0 0 rem(16);
+  }
+
+  &__note {
+    font-size: rem(13);
+    color: rgba($main-color, .65);
+    line-height: 1.9;
+    margin: 0 0 rem(50);
+  }
+
+  &__list {
+    display: flex;
+    gap: rem(22);
+    text-align: left;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    @media (max-width: 1024px) {
+      gap: rem(16);
+    }
+
+    @media (max-width: $breakpoint-sp) {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    flex: 1;
+    min-width: 0;
+    background: #fff;
+    border: 1px solid rgba($main-color, .18);
+    border-radius: rem(20) rem(100) rem(20) rem(100);
+    padding: rem(40) rem(30);
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+
+  &__item-title {
+    font-family: $main-font;
+    font-size: rem(18);
+    color: $main-color;
+    margin: 0 0 rem(10);
+  }
+
+  &__item-desc {
+    font-size: rem(13);
+    color: rgba($main-color, .6);
+    line-height: 1.8;
+    margin: 0;
+  }
+}
