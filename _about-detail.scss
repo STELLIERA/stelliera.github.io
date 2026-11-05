@@ -1,0 +1,410 @@
+@use "setting" as *;
+// ================================
+// ABOUT / わたしについて セクション
+// ================================
+
+
+.about-detail {
+
+  // ============ FV ============
+  &__fv {
+    position: relative;
+    width: 100%;
+    min-height: rem(380);
+    overflow: hidden;
+
+    &-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    &-inner {
+      position: relative;
+      z-index: 1;
+      max-width: rem(1040);
+      margin: 0 auto;
+      padding: rem(90) rem(40) rem(60);
+    }
+
+    &-heading {
+      font-family: $main-font;
+      font-size: rem(40);
+      letter-spacing: 0.08em;
+      text-align: left;
+    }
+
+    &-heading-sub {
+      display: inline-block;
+      margin: rem(6) 0 0;
+      padding-bottom: rem(22);
+      border-bottom: 1px solid $main-color;
+      font-family: $main-font;
+      font-size: rem(15);
+      color: $main-color;
+    }
+
+    &-lead {
+      margin: rem(34) 0 0;
+      font-family: $main-font;
+      font-size: rem(13);
+      line-height: 2;
+      color: rgba($main-color, 0.75);
+      text-align: left;
+    }
+
+    @media (max-width: $breakpoint-sp) {
+      min-height: rem(380);
+
+      &-inner {
+        min-height: rem(380);
+        padding: rem(60) rem(15) rem(40);
+        background-color: rgba(#fff, 0.4);
+        display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      }
+
+      &-heading {
+        font-size: rem(28);
+      }
+
+      &-heading-sub {
+        padding-bottom: rem(15);
+      }
+    }
+  }
+
+  // ==================================================
+  // プロフィール
+  // ==================================================
+  &__profile {
+    background-color: $color-bg-alt;
+
+
+    &__inner {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: rem(65);
+
+      @media (max-width: $breakpoint-sp) {
+        flex-direction: column;
+        gap: rem(40);
+      }
+    }
+
+    &__body {
+      flex: 1;
+      max-width: 480px;
+    }
+
+    &__title {
+      font-size: 20px;
+      letter-spacing: 0.1em;
+      margin: 0 0 28px;
+    }
+
+    &__list {
+      margin: 0 0 28px;
+    }
+
+    &__row {
+      display: flex;
+      padding: 12px 0;
+      border-bottom: 1px solid $color-line;
+      font-size: 14px;
+
+      &:first-child {
+        border-top: 1px solid $color-line;
+      }
+    }
+
+    &__label {
+      width: 110px;
+      flex-shrink: 0;
+      font-weight: 500;
+    }
+
+    &__value {
+      margin: 0;
+    }
+
+    &__note {
+      font-size: 13px;
+      margin: 0;
+    }
+
+    &__image {
+      flex: 1;
+      max-width: 450px;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+        img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  // ==================================================
+  // スキル
+  // ==================================================
+  &__skill {
+    background-color: $color-bg;
+
+    &__inner {
+      text-align: center;
+    }
+
+    &__title {
+      font-size: 20px;
+      letter-spacing: 0.1em;
+      margin: 0 0 56px;
+    }
+
+    &__list {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+
+    &__item {
+      width: 110px;
+    }
+
+    &__icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 88px;
+      height: 88px;
+      margin: 0 auto 16px;
+
+      img {
+        width: rem(70);
+        object-fit: contain;
+      }
+    }
+
+    &__name {
+      font-size: 14px;
+      letter-spacing: 0.03em;
+      margin: 0 0 4px;
+    }
+
+    &__desc {
+      font-size: 12px;
+      color: $color-text-sub;
+      margin: 0;
+    }
+  }
+
+  // ==================================================
+  // 屋号について
+  // ==================================================
+  &__name {
+    background-color: $color-bg-alt;
+
+    &__inner {
+      text-align: center;
+      max-width: rem(1100);
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    &__title {
+      font-size: 20px;
+      letter-spacing: 0.1em;
+      margin: 0 0 40px;
+    }
+
+    &__box {
+      display: flex;
+      align-items: center;
+      gap: 56px;
+      background-color: $color-bg;
+      border: 1px solid $color-line;
+      border-radius: 4px;
+      padding: rem(50);
+      text-align: left;
+
+      @media (max-width: $breakpoint-sp) {
+        flex-direction: column;
+        text-align: left;
+        padding: rem(50) rem(5);
+
+      }
+    }
+
+    &__logo {
+      flex-shrink: 0;
+      text-align: center;
+      padding-right: 56px;
+      border-right: 1px solid $color-line;
+
+      @media (max-width: $breakpoint-sp) {
+        padding-right: 0;
+        border-right: none;
+        padding-bottom: 24px;
+        border-bottom: 1px solid $color-line;
+        width: 100%;
+      }
+
+      &-text {
+      font-size: 32px;
+      letter-spacing: 0.04em;
+      margin: 0 0 8px;
+      color: $color-text;
+    }
+
+    &-sub {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      margin: 0;
+    }
+    }
+
+
+    &__desc {
+      font-size: 14px;
+      color: $color-text;
+      margin: 0;
+
+      @media screen and ($breakpoint-sp) {
+        padding: rem(5)
+      }
+    }
+  }
+
+  // ==================================================
+  // 対応可能なこと
+  // ==================================================
+  &__scope {
+    background-color: $color-bg;
+
+    &__inner {
+      text-align: center;
+    }
+
+    &__title {
+      font-size: rem(24);
+      letter-spacing: 0.1em;
+      margin: 0 0 40px;
+    }
+
+    &__list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px 32px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    &__item {
+      font-size: rem(15);
+      display: flex;
+      align-items: center;
+
+      &::before {
+        content: "\2713";
+        margin-right: 8px;
+        color: $color-accent;
+      }
+    }
+  }
+
+  // ==================================================
+  // お問い合わせ
+  // ==================================================
+  &__contact {
+    position: relative;
+    padding: rem(120) 0;
+    overflow: hidden;
+    text-align: center;
+    @media screen and (max-width: $breakpoint-sp) {
+      padding: rem(40);
+    }
+
+    &__image {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: rgba($color-bg, 0.55);
+      }
+    }
+
+    &__inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    &__title {
+      font-size: rem(22);
+      letter-spacing: 0.06em;
+      margin: 0 0 12px;
+
+      @media screen and (max-width: 768px){
+        font-size: rem(16);
+      }
+    }
+
+    &__lead {
+      font-size: 13px;
+      margin: 0 0 32px;
+    }
+
+    &__button {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      padding: rem(18) rem(40);
+      background-color: $back-color;
+      color: $color-btn-text;
+      text-decoration: none;
+      border-radius: 2px;
+      font-size: rem(13);
+      letter-spacing: 0.05em;
+      transition: opacity 0.2s ease;
+
+      &:hover {
+        opacity: 0.85;
+      }
+      @media screen and (max-width: $breakpoint-sp){
+        padding: rem(10) rem(25);
+      }
+    }
+
+    &__button-label {
+      letter-spacing: 0.1em;
+      @media screen and (max-width: $breakpoint-sp){
+        display: none;
+      }
+    }
+
+    &__button-arrow {
+      transition: transform 0.2s ease;
+    }
+
+    &__button:hover &__button-arrow {
+      transform: translateX(4px);
+    }
+  }
+}
