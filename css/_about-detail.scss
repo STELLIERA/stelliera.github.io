@@ -280,6 +280,10 @@
       font-size: 14px;
       color: $color-text;
       margin: 0;
+
+      @media screen and ($breakpoint-sp) {
+        padding: rem(5)
+      }
     }
   }
 

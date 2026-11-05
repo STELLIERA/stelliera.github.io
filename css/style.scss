@@ -512,25 +512,22 @@
     }
   }
 
-  &__img {
+ &__img {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  img {
+    display: block;
     width: 100%;
     height: 100%;
+    object-fit: cover;
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-
-      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%);
-      mask-image: linear-gradient(to right, transparent 0%, black 20%);
-    }
-    @media screen and (max-width: $breakpoint-sp) {
-      max-height: rem(200);
-      object-fit: cover;
-    }
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%);
+    mask-image: linear-gradient(to right, transparent 0%, black 20%);
   }
 
+ }
   &__title {
     font-weight: 400;
     letter-spacing: 0.08em;
