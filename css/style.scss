@@ -245,11 +245,11 @@
        }
       }
     &__text{
-        font-size: rem(40);
+        font-size: clamp(27px, 3vw, 40px);
         align-items: center;
         letter-spacing: 0.4rem;
          @media (max-width: $breakpoint-tab) {
-          font-size: rem(25);
+          font-size: clamp(18px, 3vw, 27px);
         }
         @media (max-width: $breakpoint-sp) {
           font-size: rem(21);
@@ -279,24 +279,24 @@
   }
 }
 }
-.arrow {
-  display: block;
-  width: rem(160);
-  height: 1px;
-  background: $main-color;
-  position: relative;
-  transition: transform 0.3s ease;
-  transform-origin: left;
-  .fv__about:hover &{
-    transform: scaleX(1.125)
-  }
-    &__text{
-    font-family: $accent-font;
-    font-size: rem(26);
-    
-  @media screen and (max-width: $breakpoint-tab) {
-    font-size: rem(18);
-  }
+  .arrow {
+    display: block;
+    width: rem(180);
+    height: 1px;
+    background: $main-color;
+    margin-top: rem(10);
+    position: relative;
+    transition: transform 0.3s ease;
+    transform-origin: left;
+    .fv__contact:hover &{
+      transform: scaleX(1.125)
+    }
+      &__text{
+      font-size: rem(21);
+      margin-bottom: rem(10);
+    @media screen and (max-width: $breakpoint-tab) {
+      font-size: rem(18);
+    }
 }
 }
 
@@ -440,38 +440,6 @@
     color: #666;
     letter-spacing: 0.03em;
   }
-&__arrow {
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-  margin-top: rem(80);
-  width: fit-content;
-  transition: opacity 0.3s ease;
-  position: relative;
-  gap: rem(10);
-  padding-right: rem(120);
-
-  &::after {
-    content: "";
-    position: relative;
-    top: rem(1);
-    width: rem(50);
-    height: 1px;
-    background-color: $main-color;
-    transform-origin: left center;
-    transform: scaleX(1);
-    transition: transform 0.3s ease;
-    will-change: transform;
-  }
-
-  &:hover {
-    opacity: 0.8;
-
-    &::after {
-      transform: scaleX(1.4);
-    }
-  }
-}
 }
 
 
@@ -588,46 +556,7 @@
   &__value {
     letter-spacing: 0.05em;
   }
-&__arrow {
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-  margin-top: rem(80);
-  width: fit-content;
-  transition: opacity 0.3s ease;
-  position: relative;
-  gap: rem(10);
-  text-decoration: none;
 
-
-  &::after {
-    content: "";
-    position: relative;
-    top: rem(1);
-    width: rem(50);
-    height: 1px;
-    background-color: $main-color;
-    transform-origin: left center;
-    transform: scaleX(1);
-    transition: transform 0.3s ease;
-    will-change: transform;
-  }
-
-  &:hover {
-    opacity: 0.8;
-
-    &::after {
-      transform: scaleX(1.4);
-    }
-  }
-}
-
-
-&__view {
-  font-family: $accent-font;
-  font-size: rem(24);
-  line-height: 1;
-}
 }
 
 //flow

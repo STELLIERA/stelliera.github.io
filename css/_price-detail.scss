@@ -53,7 +53,7 @@
 
   &__fv-heading-sub {
     font-family: $main-font;
-    font-size: rem(15);
+    font-size: rem(16);
     color: $main-color;
     margin: rem(6) 0 0;
     padding-bottom: rem(22);
@@ -67,15 +67,30 @@
 
   &__fv-lead {
     font-family: $main-font;
-    font-size: rem(13);
+    font-size: rem(15);
     color: rgba($main-color, .75);
     line-height: 2;
-    margin: rem(34) 0 0;
+    margin: rem(34) 0;
          @media (max-width: $breakpoint-sp) {
       text-align: left;
     }
   }
 
+  &__contact__button{
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      padding: rem(15) rem(20);
+      background-color: $color-btn;
+      color: $color-btn-text;
+      text-decoration: none;
+      font-size: rem(13);
+      letter-spacing: 0.08em;
+      transition: opacity 0.2s ease;
+      &:hover {
+        opacity: 0.85;
+      }
+  }
   // ============ BASE PRICE / OPTION ============
   &__panels{
     background-color: $accent-color;

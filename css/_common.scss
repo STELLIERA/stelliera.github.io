@@ -59,6 +59,50 @@ a {
     }
 }
 
+//section
+
+.section{
+  &__arrow {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-top: rem(80);
+    width: fit-content;
+    transition: opacity 0.3s ease;
+    position: relative;
+    gap: rem(10);
+    padding-right: rem(120);
+    @media screen and (max-width: $breakpoint-sp) {
+      padding-right: 0;
+    }
+  &::after {
+    content: "";
+    position: relative;
+    top: rem(1);
+    width: rem(50);
+    height: 1px;
+    background-color: $main-color;
+    transform-origin: left center;
+    transform: scaleX(1);
+    transition: transform 0.3s ease;
+    will-change: transform;
+  }
+
+  &:hover {
+    opacity: 0.8;
+
+    &::after {
+      transform: scaleX(1.4);
+    }
+  }
+  &-view {
+  font-family: $accent-font;
+  font-size: rem(24);
+  line-height: 1;
+}
+}
+}
+
 //footer
 .footer {
   background-color: $back-color;
